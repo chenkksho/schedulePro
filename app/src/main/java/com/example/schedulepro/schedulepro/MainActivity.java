@@ -20,6 +20,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
 
+import java.net.URLEncoder;
 import java.util.function.Function;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             // 使用GET方法发送请求,需要把参数加在URL后面，用？连接，参数之间用&分隔
-            String url = "http://www.superps.cn:1337/com/hello?" + userName;
-
+            String url = "http://www.superps.cn:1337/com/hello?" + URLEncoder.encode(userName);
             // 生成请求对象
             HttpGet httpGet = new HttpGet(url);
             HttpClient httpClient = new DefaultHttpClient();
