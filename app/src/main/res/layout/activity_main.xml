@@ -7,17 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/backG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg2"></ImageView>
+
     <EditText
         android:id="@+id/txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:lines="1"
         android:text=""
-        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toTopOf="@id/commit"
         app:layout_constraintLeft_toRightOf="@id/message"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/backG" />
 
     <Button
         android:id="@+id/commit"
@@ -35,7 +42,7 @@
         android:layout_margin="5dp"
         android:background="#fd3"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></TextView>
+        app:layout_constraintTop_toBottomOf="@id/backG"></TextView>
     <!--app:layout_constraintLeft_toLeftOf="parent"-->
     <!--app:layout_constraintTop_toTopOf="parent"-->
     <!--app:layout_constraintHorizontal_weight="1"/>-->
@@ -62,5 +69,4 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/navigation" />
-
 </android.support.constraint.ConstraintLayout>
