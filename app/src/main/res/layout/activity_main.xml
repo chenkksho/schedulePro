@@ -7,36 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/commit"
+        app:layout_constraintLeft_toRightOf="@id/message" />
+
+    <Button
+        android:id="@+id/commit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="测试"
+        app:layout_constraintLeft_toRightOf="@id/message"
+        app:layout_constraintTop_toBottomOf="@id/txt"
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
         android:id="@+id/message"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        ></TextView>
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--app:layout_constraintHorizontal_weight="1"/>-->
+        android:background="#fd3"
+        app:layout_constraintHorizontal_weight="1"></TextView>
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintHorizontal_weight="1"/>-->
     <!--<TextView-->
-        <!--android:id="@+id/message2"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
-        <!--android:layout_marginStart="@dimen/activity_horizontal_margin"-->
-        <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
-        <!--android:text="234234"-->
-        <!--app:layout_constraintLeft_toRightOf="@+id/message"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--app:layout_constraintHorizontal_weight="1"/>-->
+    <!--android:id="@+id/message2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+    <!--android:layout_marginStart="@dimen/activity_horizontal_margin"-->
+    <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+    <!--android:text="234234"-->
+    <!--app:layout_constraintLeft_toRightOf="@+id/message"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintHorizontal_weight="1"/>-->
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
