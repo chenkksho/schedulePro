@@ -59,7 +59,9 @@ public class MainActivity extends Activity {
                 return;
             }
             // 使用GET方法发送请求,需要把参数加在URL后面，用？连接，参数之间用&分隔
-            String url = "http://www.superps.cn:1337/com/hello?" + URLEncoder.encode(userName);
+            String url = "http://www.superps.cn:1337/com/hi?usr=" + URLEncoder.encode(userName);
+//            String url = "http://www.superps.cn:1337/com/hi";
+
             // 生成请求对象
             HttpGet httpGet = new HttpGet(url);
             HttpClient httpClient = new DefaultHttpClient();
