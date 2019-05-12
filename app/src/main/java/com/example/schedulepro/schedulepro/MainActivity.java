@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
             mTextMessage.setText(String.format("加载%s数据ing...", item.getTitle()));
-            thead.start();
+//            thead.start();
             //
             return true;
         }
@@ -52,7 +52,8 @@ public class MainActivity extends Activity {
 //            mTextMessage.setText(msg.obj + "");
 //        }
 //    };
-    private Thread thead = new Thread(new Runnable() {
+
+    private Runnable run=new Runnable() {
         @Override
         public void run() {
             if (userName == "") {
@@ -80,7 +81,8 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
         }
-    });
+    };
+
 
     //设置系统状态栏为透明,并且会取消占用的空间
     @TargetApi(19)
@@ -123,7 +125,7 @@ public class MainActivity extends Activity {
 //        params.height = getStatusBarHeight();
 
         mTextMessage = (TextView) findViewById(R.id.message);
-        thead.start();
+//        thead.start();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Button btnCommit = (Button) findViewById(R.id.commit);
@@ -133,7 +135,7 @@ public class MainActivity extends Activity {
                 //Toast.makeText(MainActivity.this,"asd",Toast.LENGTH_LONG).show();
                 TextView txtUsr = (TextView) findViewById(R.id.txt);
                 MainActivity.this.userName = txtUsr.getText().toString();
-                thead.start();
+                new Thread(MainActivity.this.run).start();
             }
         });
     }
