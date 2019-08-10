@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
             // 发送请求
             try {
                 HttpResponse response = httpClient.execute(httpGet);
-                final String result = EntityUtils.toString(response.getEntity(), "utf-8");
+                final String result = EntityUtils.toString(response.getEntity(),"utf-8");
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
